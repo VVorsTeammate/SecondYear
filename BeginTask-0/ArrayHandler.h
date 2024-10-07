@@ -8,7 +8,7 @@ private:
     size_t _max;
     size_t count;
 public:
-    ArrayHandler(size_t size = 10) {
+    ArrayHandler(size_t size = 1000000) {
         _size = size;
         _array = new T[_size];
         _max = 0;
