@@ -1,4 +1,4 @@
-//Andrey Chertilla
+//Andrey Loh
 template<typename T>
 class ArrayHandler {
 private:
