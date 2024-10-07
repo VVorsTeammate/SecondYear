@@ -1,44 +1,31 @@
 //Andrey Loh
+
 template<typename T>
 class ArrayHandler {
 private:
-    //size_t _size;
-    //T* _array;
-    size_t _min;
-    size_t _max;
-    //size_t count;
+    T* _array;
+    size_t _size;
+    size_t _count;
+    T _min;
+    T _max;
 public:
-    ArrayHandler(size_t size = 1000000) {
-        //_size = size;
-        //_array = new T[2];
-        // _array[0] = 0;
-        // _array[1] = 100000001;
-        _max = 0;
-        _min = 100000001;
-        //count = 0;
+    ArrayHandler(size_t initial_size = 1000000)
+        : _size(initial_size), _count(0), _min(std::numeric_limits<T>::max()), _max(std::numeric_limits<T>::min()) {
+        _array = new T[_size];
     }
 
     void AppendElem(T elem) {
-        // if (count == _size){
-        //     _size *= 10; 
-        //     T* array_2 = new T [_size];
-        //     for (size_t i = 0; i < count; i ++){
-        //         array_2[i] = _array[i];
-        //     }
-        //     delete [] _array;
-        //     _array = array_2;
-        // }
-        // _array[count] = elem;
-        // count ++;
-        // if (_min > elem){
-        //     _min = elem;
-        // }
-
-        // if (_max < elem){
-        //     _max = elem;
-        // }
+        _array[_count++] = elem;
         _min = (elem < _min) ? elem : _min;
         _max = (elem > _max) ? elem : _max;
+    }
+
+    T GetMax() const {
+        return _max;
+    }
+
+    T GetMin() const {
+        return _min;
     }
 
     bool IsContains(T elem) {
@@ -54,7 +41,7 @@ public:
     }
 
     ~ArrayHandler() {
-        //delete [] _array;
+        delete [] _array;
     }
 
 };
