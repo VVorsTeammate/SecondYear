@@ -30,13 +30,15 @@ public:
         // }
         // _array[count] = elem;
         // count ++;
-        if (_min > elem){
-            _min = elem;
-        }
+        // if (_min > elem){
+        //     _min = elem;
+        // }
 
-        if (_max < elem){
-            _max = elem;
-        }
+        // if (_max < elem){
+        //     _max = elem;
+        // }
+        _min = (elem < _min) ? elem : _min;
+        _max = (elem > _max) ? elem : _max;
     }
 
     bool IsContains(T elem) {
