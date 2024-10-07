@@ -1,31 +1,39 @@
-//Andrey Loh
-
+//Andrey Chert!!
 template<typename T>
 class ArrayHandler {
 private:
-    T* _array;
     size_t _size;
-    size_t _count;
-    T _min;
-    T _max;
+    T* _array;
+    size_t _min;
+    size_t _max;
+    size_t count;
 public:
-    ArrayHandler(size_t initial_size = 1000000)
-        : _size(initial_size), _count(0), _min(std::numeric_limits<T>::max()), _max(std::numeric_limits<T>::min()) {
+    ArrayHandler(size_t size = 100) {
+        _size = size;
         _array = new T[_size];
+        _max = 0;
+        _min = 100000001;
+        count = 0;
     }
 
     void AppendElem(T elem) {
-        _array[_count++] = elem;
-        _min = (elem < _min) ? elem : _min;
-        _max = (elem > _max) ? elem : _max;
-    }
+        if (count == _size){
+            _size *= 10; 
+            T* array_2 = new T [_size];
+            for (size_t i = 0; i < count; i ++){
+                array_2[i] = _array[i];
+            }
+            delete [] _array;
+            _array = array_2;
+        }
+        _array[count++] = elem;
+        if (_min > elem){
+            _min = elem;
+        }
 
-    T GetMax() const {
-        return _max;
-    }
-
-    T GetMin() const {
-        return _min;
+        if (_max < elem){
+            _max = elem;
+        }
     }
 
     bool IsContains(T elem) {
