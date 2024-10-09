@@ -9,7 +9,7 @@ private:
     size_t _max;
     size_t count;
 public:
-    ArrayHandler(size_t size = 100) {
+    ArrayHandler(size_t size = 10) {
         _size = size;
         _array = new T[_size];
         _max = 0;
@@ -19,7 +19,7 @@ public:
 
     void AppendElem(T elem) {
         if (count == _size){
-            _size *= 10; 
+            _size *= 3; 
             T* array_2 = new T [_size];
             std::memcpy(array_2, _array, count*sizeof(T));
             delete [] _array;
