@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdint.h>
 
 class BitField {
 private:
@@ -25,5 +26,7 @@ public:
     bool operator==(const BitField& tmp); // Даша
     BitField operator~(); // Все
 
-    ~BitField(); // Все
+    ~BitField(){
+        delete [] _mem;
+    } // Все
 };
