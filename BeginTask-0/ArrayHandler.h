@@ -1,4 +1,5 @@
 //Andrey Chert!!
+#include<cstring>
 template<typename T>
 class ArrayHandler {
 private:
@@ -20,7 +21,7 @@ public:
         if (count == _size){
             _size *= 10; 
             T* array_2 = new T [_size];
-            std::memcpy(array_2, _array, _count*sizeof(T));
+            std::memcpy(array_2, _array, count*sizeof(T));
             delete [] _array;
             _array = array_2;
         }
