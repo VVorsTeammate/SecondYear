@@ -19,7 +19,7 @@ public:
 
     void AppendElem(T elem) {
         if (count == _size){
-            _size *= 5; 
+            _size *= 7; 
             T* array_2 = new T [_size];
             std::memcpy(array_2, _array, count*sizeof(T));
             delete [] _array;

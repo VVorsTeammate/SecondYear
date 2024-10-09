@@ -1,3 +1,0 @@
-E:/2_semestr/SecondYear/build/CMakeFiles/set.dir
-E:/2_semestr/SecondYear/build/CMakeFiles/edit_cache.dir
-E:/2_semestr/SecondYear/build/CMakeFiles/rebuild_cache.dir
