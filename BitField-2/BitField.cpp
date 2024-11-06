@@ -15,6 +15,13 @@ BitField::BitField(const BitField& tmp) {
     std::memcpy(_mem, tmp._mem, _memSize * sizeof(uint16_t));
 }
 
+BitField& BitField::operator=(const BitField&& tmp){
+    _sizeBit = tmp._sizeBit;
+    _memSize = tmp._memSize;
+    _mem = tmp._mem;
+    return *this;
+}
+
 BitField& BitField::operator=(const BitField& tmp){
     if (_sizeBit != tmp._sizeBit){
         delete [] _mem;

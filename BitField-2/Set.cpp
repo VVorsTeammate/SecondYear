@@ -58,11 +58,11 @@ std::vector<uint64_t> Set::GetPrimary(){
 
 
 bool Set::operator==(const Set &s) const{
-    return (s._bitField == this->_bitField);
+    return (s._bitField == _bitField);
 }
 
 bool Set::operator!= (const Set &s) const{
-    return !(s._bitField == this->_bitField);
+    return !(s._bitField == _bitField);
 }
 Set& Set::operator=(const Set &s){
     _maxPower = s._maxPower;
