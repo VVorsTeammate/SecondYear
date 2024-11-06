@@ -33,6 +33,7 @@ bool Set::IsMember(uint64_t elem) const{
 
 std::vector<uint64_t> Set::GetPrimary(){
     std::vector<uint64_t> res;
+    res.push_back(1);
     Set tmp(*this);
     size_t n = tmp.GetMaxPower(); //static_cast<size_t> (sqrt(n))
     size_t i = 2;
@@ -64,6 +65,8 @@ bool Set::operator!= (const Set &s) const{
     return !(s._bitField == this->_bitField);
 }
 Set& Set::operator=(const Set &s){
+    _maxPower = s._maxPower;
+    _bitField = s._bitField;
     return *this;
 }
 Set Set::operator+ (const uint64_t Elem){

@@ -1,19 +1,18 @@
 #include "BitField.h"
+#include "cstring"
 
 BitField::BitField(size_t len) {
     _sizeBit = len;
     _memSize = (len / (8 * sizeof(uint16_t))) + (len % (8 * sizeof(uint16_t)) != 0);
     _mem = new uint16_t[_memSize];
-    for (size_t i = 0; i < _memSize; ++i)
-        _mem[i] = 0;
+    std::memset(_mem, 0, _memSize);
 }
 
 BitField::BitField(const BitField& tmp) {
     _sizeBit = tmp._sizeBit;
     _memSize = tmp._memSize;
     _mem = new uint16_t[_memSize];
-    for (size_t i = 0; i < _memSize; ++i)
-        _mem[i] = tmp._mem[i];
+    std::memcpy(_mem, tmp._mem, _memSize * sizeof(uint16_t));
 }
 
 BitField& BitField::operator=(const BitField& tmp){
