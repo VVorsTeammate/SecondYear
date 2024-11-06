@@ -70,11 +70,15 @@ Set& Set::operator=(const Set &s){
     return *this;
 }
 Set Set::operator+ (const uint64_t Elem){
-    return *this;
+    Set res(*this);
+    res.InsElem(Elem);
+    return res;
 }
                                   
 Set Set::operator- (const uint64_t Elem){
-    return *this;
+    Set res(*this);
+    res.DelElem(Elem);
+    return res;
 }
                                    
 Set Set::operator+ (const Set &s){
@@ -88,6 +92,5 @@ Set Set::operator* (const Set &s){
     return res;
 }
 Set Set::operator~ (){
-    Set res(~(this->_bitField));
-    return res;
+    return Set(~_bitField);
 }
