@@ -32,5 +32,13 @@ public:
   Set operator* (const Set &s);  // пересечение
   Set operator~ ();           // дополнение
   std::vector<uint64_t> GetPrimary(); // Выдать простые числа множества //+
-  
+      friend std::ostream& operator<<(std::ostream& os, const Set& set){
+        for (int i = 0; i < set._maxPower; i++){
+            if (set._bitField.GetBit(i) == 1){
+                std::cout<<i<<" ";
+            }
+        }
+        std::cout<<"\n";
+        return os;
+    }
 };

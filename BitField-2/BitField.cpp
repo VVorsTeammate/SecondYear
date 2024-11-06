@@ -63,7 +63,7 @@ void BitField::ClrBit(size_t n){
 BitField BitField::operator|(const BitField& tmp){ //размеры битовых полей могут быть разными
     BitField B(*this);
     for (size_t i=0; i < _memSize; i++){
-        B._mem[i] |= tmp._mem[i];
+        B._mem[i] |= _mem[i] | tmp._mem[i];;
     }
     return B;
 }

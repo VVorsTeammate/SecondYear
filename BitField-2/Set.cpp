@@ -2,17 +2,13 @@
 #include <cmath>
 
 
-Set::Set(size_t mp) : _bitField(mp){
-    _maxPower = mp;
+Set::Set(size_t mp) : _bitField(mp), _maxPower(mp){
 }
 
-Set::Set(const Set& set) : _bitField(set._maxPower){
-    _maxPower = set._maxPower;
-    _bitField = set._bitField;
+Set::Set(const Set& set) : _bitField(set._bitField), _maxPower(set._maxPower){
 }
 
-Set::Set(const BitField& bf) : _bitField(bf){
-    _maxPower = bf.GetLength();
+Set::Set(const BitField& bf)  : _bitField(bf), _maxPower(bf.GetLength()){
 }
 
 size_t Set::GetMaxPower(void) const{
@@ -62,7 +58,7 @@ bool Set::operator==(const Set &s) const{
 }
 
 bool Set::operator!= (const Set &s) const{
-    return !(s._bitField == _bitField);
+    return !(_bitField == s._bitField);
 }
 Set& Set::operator=(const Set &s){
     _maxPower = s._maxPower;

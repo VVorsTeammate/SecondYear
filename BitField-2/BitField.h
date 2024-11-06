@@ -31,6 +31,6 @@ public:
     BitField& operator=(const BitField&& tmp);
 
     ~BitField(){
-        delete [] _mem;
+        //delete [] _mem;
     } // Все
 };
