@@ -1,0 +1,50 @@
+[
+{
+  "directory": "E:/2_semestr/SecondYear/build",
+  "command": "E:\\comp\\mingw64\\bin\\g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\main.cpp.obj -c E:\\2_semestr\\SecondYear\\BitField-2\\main.cpp",
+  "file": "E:/2_semestr/SecondYear/BitField-2/main.cpp",
+  "output": "CMakeFiles/main.dir/main.cpp.obj"
+},
+{
+  "directory": "E:/2_semestr/SecondYear/build",
+  "command": "E:\\comp\\mingw64\\bin\\g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\BitField.cpp.obj -c E:\\2_semestr\\SecondYear\\BitField-2\\BitField.cpp",
+  "file": "E:/2_semestr/SecondYear/BitField-2/BitField.cpp",
+  "output": "CMakeFiles/main.dir/BitField.cpp.obj"
+},
+{
+  "directory": "E:/2_semestr/SecondYear/build",
+  "command": "E:\\comp\\mingw64\\bin\\g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\Set.cpp.obj -c E:\\2_semestr\\SecondYear\\BitField-2\\Set.cpp",
+  "file": "E:/2_semestr/SecondYear/BitField-2/Set.cpp",
+  "output": "CMakeFiles/main.dir/Set.cpp.obj"
+},
+{
+  "directory": "E:/2_semestr/SecondYear/build",
+  "command": "E:\\comp\\mingw64\\bin\\g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\tests.cpp.obj -c E:\\2_semestr\\SecondYear\\BitField-2\\tests.cpp",
+  "file": "E:/2_semestr/SecondYear/BitField-2/tests.cpp",
+  "output": "CMakeFiles/main.dir/tests.cpp.obj"
+},
+{
+  "directory": "E:/2_semestr/SecondYear/build/_deps/googletest-build/googlemock",
+  "command": "E:\\comp\\mingw64\\bin\\g++.exe  @CMakeFiles/gmock.dir/includes_CXX.rsp -g -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles\\gmock.dir\\src\\gmock-all.cc.obj -c E:\\2_semestr\\SecondYear\\build\\_deps\\googletest-src\\googlemock\\src\\gmock-all.cc",
+  "file": "E:/2_semestr/SecondYear/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj"
+},
+{
+  "directory": "E:/2_semestr/SecondYear/build/_deps/googletest-build/googlemock",
+  "command": "E:\\comp\\mingw64\\bin\\g++.exe  @CMakeFiles/gmock_main.dir/includes_CXX.rsp -g -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles\\gmock_main.dir\\src\\gmock_main.cc.obj -c E:\\2_semestr\\SecondYear\\build\\_deps\\googletest-src\\googlemock\\src\\gmock_main.cc",
+  "file": "E:/2_semestr/SecondYear/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj"
+},
+{
+  "directory": "E:/2_semestr/SecondYear/build/_deps/googletest-build/googletest",
+  "command": "E:\\comp\\mingw64\\bin\\g++.exe  @CMakeFiles/gtest.dir/includes_CXX.rsp -g -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles\\gtest.dir\\src\\gtest-all.cc.obj -c E:\\2_semestr\\SecondYear\\build\\_deps\\googletest-src\\googletest\\src\\gtest-all.cc",
+  "file": "E:/2_semestr/SecondYear/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj"
+},
+{
+  "directory": "E:/2_semestr/SecondYear/build/_deps/googletest-build/googletest",
+  "command": "E:\\comp\\mingw64\\bin\\g++.exe  @CMakeFiles/gtest_main.dir/includes_CXX.rsp -g -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles\\gtest_main.dir\\src\\gtest_main.cc.obj -c E:\\2_semestr\\SecondYear\\build\\_deps\\googletest-src\\googletest\\src\\gtest_main.cc",
+  "file": "E:/2_semestr/SecondYear/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj"
+}
+]
