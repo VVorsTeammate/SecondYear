@@ -14,7 +14,6 @@ public:
     BitField(size_t len);
     BitField(const BitField& tmp);
     BitField& operator=(const BitField& tmp);
-    BitField(const BitField&& tmp);
     
     size_t GetLength() const{
         return _sizeBit;
@@ -29,7 +28,6 @@ public:
     BitField operator^(const BitField& tmp);
     bool operator==(const BitField& tmp) const;
     BitField operator~();
-    BitField& operator=(const BitField&& tmp);
 
     ~BitField(){
         //delete [] _mem;
