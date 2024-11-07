@@ -54,7 +54,7 @@ std::vector<uint64_t> Set::GetPrimary(){
 
 
 bool Set::operator==(const Set &s) const{
-    return (s._bitField == _bitField);
+    return (_bitField == s._bitField);
 }
 
 bool Set::operator!= (const Set &s) const{
@@ -78,14 +78,10 @@ Set Set::operator- (const uint64_t Elem){
 }
                                    
 Set Set::operator+ (const Set &s){
-    BitField tmp(this->_bitField | s._bitField);
-    Set res(tmp);
-    return res;
+    return Set(_bitField | s._bitField);
 }
 Set Set::operator* (const Set &s){
-    BitField tmp(this->_bitField & s._bitField);
-    Set res(tmp);
-    return res;
+    return Set(_bitField & s._bitField);
 }
 Set Set::operator~ (){
     return Set(~_bitField);

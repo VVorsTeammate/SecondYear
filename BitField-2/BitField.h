@@ -14,6 +14,7 @@ public:
     BitField(size_t len);
     BitField(const BitField& tmp);
     BitField& operator=(const BitField& tmp);
+    BitField(const BitField&& tmp);
     
     size_t GetLength() const{
         return _sizeBit;

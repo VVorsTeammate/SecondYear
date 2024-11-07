@@ -1,7 +1,13 @@
 #include "BitField.h"
 #include "cstring"
 
-BitField::BitField(size_t len) {
+BitField::BitField(const BitField&& tmp){
+    _sizeBit = tmp._sizeBit;
+    _memSize = tmp._memSize;
+    _mem = tmp._mem;
+}
+
+BitField::BitField(size_t len = 10) {
     _sizeBit = len;
     _memSize = (len / (8 * sizeof(uint16_t))) + (len % (8 * sizeof(uint16_t)) != 0);
     _mem = new uint16_t[_memSize];
@@ -29,13 +35,12 @@ BitField& BitField::operator=(const BitField& tmp){
         _memSize = tmp._memSize;
         _mem = new uint16_t[_memSize];
     }
-    for (size_t i = 0; i < _memSize; ++i)
-        _mem[i] = tmp._mem[i];
+    std::memcpy(_mem, tmp._mem, _memSize * sizeof(uint16_t));
     return *this;
 }
 
 uint16_t BitField::GetMask(size_t n) const {
-    return 1 << (n % 16);
+    return 1 << (n % (8 * sizeof(uint16_t)));
 }
 
 void BitField::SetBit(size_t n) {
@@ -45,14 +50,13 @@ void BitField::SetBit(size_t n) {
 size_t BitField::GetMemIndex(size_t n) const {
     if (n >= _sizeBit)
         throw "Bit out of range!";
-    size_t index = n / (8 * sizeof(uint16_t));
-    return index;
+    return n / (8 * sizeof(uint16_t));
 }
 
 uint8_t BitField::GetBit(size_t n) const {
-    if (n >= _sizeBit){
-        throw "PSHNH Bit out of range";
-    }
+    // if (n >= _sizeBit){
+    //     throw "PSHNH Bit out of range";
+    // }
     return ((_mem[GetMemIndex(n)] & GetMask(n)) != 0);
 }
 
@@ -107,7 +111,12 @@ bool BitField::operator==(const BitField& tmp) const{
 BitField BitField::operator~(){ //размеры битовых полей могут быть разными
     BitField copy(*this);
     for (size_t i=0; i < _memSize; i++){
-        copy._mem[i] = ~copy._mem[i];
+        if (GetBit(i)){
+            copy.ClrBit(i);
+        }
+        else{
+            copy.SetBit(i);
+        }
     }
     return copy;
 }
